@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import { urlForImage } from '~/lib/sanity.image'
 import { type Post } from '~/lib/sanity.queries'
@@ -20,9 +21,9 @@ export default function Card({ post }: { post: Post }) {
       )}
       <div className="card__container">
         <h3 className="card__title">
-          <a className="card__link" href={`/post/${post.slug.current}`}>
+          <Link className="card__link" href={`/post/${post.slug.current}`}>
             {post.title}
-          </a>
+          </Link>
         </h3>
         <p className="card__excerpt">{post.excerpt}</p>
         <p className="card__date">{formatDate(post._createdAt)}</p>

@@ -3,7 +3,7 @@ import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import Image from 'next/image'
 import { useLiveQuery } from 'next-sanity/preview'
 
-import Container from '~/components/Container'
+import PageContainer from '~/components/PageContainer'
 import { readToken } from '~/lib/sanity.api'
 import { getClient } from '~/lib/sanity.client'
 import { urlForImage } from '~/lib/sanity.image'
@@ -52,7 +52,7 @@ export default function ProjectSlugRoute(
   })
 
   return (
-    <Container>
+    <PageContainer>
       <section className="post">
         {post.mainImage ? (
           <Image
@@ -74,7 +74,7 @@ export default function ProjectSlugRoute(
           </div>
         </div>
       </section>
-    </Container>
+    </PageContainer>
   )
 }
 
